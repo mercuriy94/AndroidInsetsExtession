@@ -20,7 +20,7 @@ import java.util.*
  */
 
 /**
- * Обработь инсеты
+ * Обработать инсеты
  *
  * @param block лямбда в которой реализуется обработка инсетов
  *
@@ -32,7 +32,7 @@ fun View.doOnApplyWindowInsets(
 
     ViewCompat.setOnApplyWindowInsetsListener(this) { v, insets ->
         block(v, insets, initialViewState)
-        // Всегда возвращайте оригинальные инсеты, чтобы дочерние вью могли их использовать
+        // Всегда возвращать оригинальные инсеты, чтобы дочерние вью могли их использовать
         insets
     }
     requestApplyInsetsWhenAttached()
@@ -64,9 +64,8 @@ fun Insets.copy(f: (insets: Rect) -> Rect): Insets {
     return Insets.of(f(initialRect))
 }
 
-
 /**
- * Обработать инсеты к внутрнним и внешним отсупам
+ * Обработать инсеты с примененим их к внутрнним и внешним отсупам
  *
  * @param insets
  * @param initialViewState начальное состояние вью
